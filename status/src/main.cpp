@@ -5,9 +5,12 @@
  
 #define MODULE_TOPIC "PRINTERS/status"
 #define WIFI_NAME "c3c2c4"
-#define WIFI_PASSWORD "331982219"
-#define MQTT_SERVER "192.168.0.22"
+//#define WIFI_PASSWORD "331982219"
+//#define MQTT_SERVER "192.168.0.22"
+#define MQTT_SERVER "193.40.245.72"
 #define MQTT_PORT "1883"
+#define MQTT_USER "test"
+#define MQTT_PASSWORD "test"
  
  
 #define BUZZER_PIN D8
@@ -78,10 +81,17 @@ void setup()
   Serial.begin(115200); // setting up serial connection parameter
   Serial.println("Booting");
  
-  iot.setConfig("wname", WIFI_NAME);
-  iot.setConfig("wpass", WIFI_PASSWORD);
-  iot.setConfig("msrv", MQTT_SERVER);
-  iot.setConfig("mport", MQTT_PORT);
+  // iot.setConfig("wname", WIFI_NAME);
+  // iot.setConfig("wpass", WIFI_PASSWORD);
+  // iot.setConfig("msrv", MQTT_SERVER);
+  // iot.setConfig("mport", MQTT_PORT);
+
+  iot.setConfig("wname", "TalTech");
+  iot.setConfig("wpass", "");
+  iot.setConfig("msrv", "193.40.245.72");
+  iot.setConfig("mport", "1883");
+  iot.setConfig("muser", "test");
+  iot.setConfig("mpass", "test");
   iot.printConfig(); // print json config to serial
   iot.setup();
  

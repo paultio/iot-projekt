@@ -46,10 +46,16 @@ void setup()
   Serial.begin(115200); // setting up serial connection parameter
   Serial.println("Booting");
  
-  iot.setConfig("wname", WIFI_NAME);
-  iot.setConfig("wpass", WIFI_PASSWORD);
-  iot.setConfig("msrv", MQTT_SERVER);
-  iot.setConfig("mport", MQTT_PORT);
+  // iot.setConfig("wname", WIFI_NAME);
+  // iot.setConfig("wpass", WIFI_PASSWORD);
+  // iot.setConfig("msrv", MQTT_SERVER);
+  // iot.setConfig("mport", MQTT_PORT);
+  iot.setConfig("wname", "TalTech");
+  iot.setConfig("wpass", "");
+  iot.setConfig("msrv", "193.40.245.72");
+  iot.setConfig("mport", "1883");
+  iot.setConfig("muser", "test");
+  iot.setConfig("mpass", "test");
   iot.printConfig(); // print json config to serial
   iot.setup(); // Initialize IoT library
  

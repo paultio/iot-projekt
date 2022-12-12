@@ -70,7 +70,7 @@ void iot_received(String topic, String msg)
   void iot_received(String topic, String msg);
 
   // Check if topic contains temperature data
-  if(topic == ("ESP02/PRINTERS/nozzle"))
+  if(topic == ("ESP02/PRINTERS/nzl_temp"))
   {
     nozzle_temp = msg.toFloat(); // Convert string to float
   }
@@ -85,7 +85,8 @@ void iot_connected()
   Serial.println("MQTT connected callback");
   iot.log("IoT OLED screen example!");
   isBootModeNormal = true;
-  iot.subscribe("#/PRINTERS/#");
+  iot.subscribe("ESP02/PRINTERS/nzl_temp");
+  iot.subscribe("ESP27/PRINTERS/auth");
 }
  
 void setup()

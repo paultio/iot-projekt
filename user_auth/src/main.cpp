@@ -48,17 +48,17 @@ void loop()
  
   // If the button is long pressed, it publishes message “LongPressed”
   if (button.longPress()) {
-    iot.publishMsg(MODULE_TOPIC, "ON");
+    iot.publishMsg(MQTT_TOPIC, "ON");
   }
  
   // If the button is double clicked, it publishes message “DoubleClick”
   if (button.doubleClick()) {
-    iot.publishMsg(MODULE_TOPIC, "WARN");
+    iot.publishMsg(MQTT_TOPIC, "WARN");
   }
  
   // If the button is pushed down, it publishes message “ButtonPushed”
   if (button.pushed()) {
-    iot.publishMsg(MODULE_TOPIC, "OFF");
+    iot.publishMsg(MQTT_TOPIC, "OFF");
   }
  
   delay(3);

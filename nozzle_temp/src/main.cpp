@@ -4,7 +4,7 @@
 #include <Ticker.h>
 #include <DHT.h>
  
-#define MODULE_TOPIC "PRINTERS/nozzle"
+#define MODULE_TOPIC "PRINTERS"
 #define WIFI_NAME "c3c2c4"
 #define WIFI_PASSWORD "331982219"
 #define MQTT_SERVER "192.168.0.22"
@@ -80,10 +80,10 @@ void loop()
  
     // Convert temperature value messages to strings and send to the MQTT server
     String(t).toCharArray(buf,10);
-    iot.publishMsg("nzl_temp",buf);
+    iot.publishMsg(MODULE_TOPIC"/nzl_temp",buf);
  
     // Convert humidity value messages to strings and send to the MQTT server
     String(h).toCharArray(buf,10);
-    iot.publishMsg("nzl_hum",buf);
+    iot.publishMsg(MODULE_TOPIC"/nzl_hum",buf);
   }
 }
